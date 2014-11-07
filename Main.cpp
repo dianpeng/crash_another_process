@@ -11,7 +11,6 @@ int main( int argc , char** argv ) {
     HANDLE hProcess;
     HANDLE hThread;
     void* pPageAddr;
-    DWORD dwWaitRet;
     int PID;
 
     if( argc != 2 ) {
@@ -57,7 +56,7 @@ int main( int argc , char** argv ) {
     }
 
     // Wait until the crash happened or the process is died
-    dwWaitRet = WaitForSingleObject(hThread,INFINITE);
+    WaitForSingleObject(hThread,INFINITE);
 
     // Now we can safely release our process
 
